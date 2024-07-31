@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import NeonComponent from '../common/neon/neonComponent.tsx';
+import { TestComp } from '../common/testComponent.tsx';
 
 const Container = styled.div`
   width: 100vw;
