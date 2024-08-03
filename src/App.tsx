@@ -1,5 +1,5 @@
 import { Route, HashRouter, Routes } from 'react-router-dom';
-import Selection from './components/page/selection.tsx';
+import SelectPage from './components/page/common/selectPage';
 import { ThemeProvider } from 'styled-components';
 
 const THEME = {
@@ -11,7 +11,7 @@ function App() {
     <HashRouter>
       <ThemeProvider theme={THEME}>
         <Routes>
-          <Route path='/' element={<Selection />} />
+          <Route path='/' element={<SelectPage />} />
         </Routes>
       </ThemeProvider>
     </HashRouter>

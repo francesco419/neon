@@ -1,13 +1,14 @@
 import styled, { css } from 'styled-components';
+import { SizeType } from './neonComponent';
 
 type NeonCompProps = {
   state: boolean;
   color: string;
+  styles: SizeType;
 };
 
 export const NeonBoxStyle = styled.div<NeonCompProps>`
-  width: 500px;
-  height: 500px;
+  ${(props) => props.styles}
   border: 3px solid #f0f0f070;
   border-radius: 10px;
   padding: 20px;

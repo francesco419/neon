@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import NeonComponent from '../common/neon/neonComponent.tsx';
-import { TestComp } from '../common/testComponent.tsx';
+import NeonComponent from '../../common/neon/neonComponent.tsx';
 
 const Container = styled.div`
   width: 100vw;
@@ -17,14 +16,14 @@ const FlexBox = styled.div`
   justify-content: center;
 `;
 
-export default function Selection() {
+export default function SelectPage() {
   return (
     <Container>
       <FlexBox>
-        <NeonComponent>
+        <NeonComponent neonSize={{ width: '300px', height: '100px' }}>
           <p>first</p>
         </NeonComponent>
-        <NeonComponent>
+        <NeonComponent neonSize={{ width: '100px', height: '100px' }}>
           <p>second</p>
         </NeonComponent>
       </FlexBox>
