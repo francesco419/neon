@@ -8,26 +8,48 @@ const Container = styled.div`
 `;
 
 const FlexBox = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   width: 1280px;
   margin: 0 auto;
   background-color: #000;
-  gap: 100px;
-  justify-content: center;
+
+  &:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
 `;
 
 export default function SelectPage() {
   return (
-    <Container>
-      <FlexBox>
-        <NeonComponent neonSize={{ width: '300px', height: '100px' }}>
-          <p>first</p>
-        </NeonComponent>
-        <NeonComponent neonSize={{ width: '100px', height: '100px' }}>
-          <p>second</p>
-        </NeonComponent>
-      </FlexBox>
-    </Container>
+    <>
+      <Container>
+        <FlexBox>
+          <NeonComponent>
+            <p>1</p>
+          </NeonComponent>
+          <NeonComponent>
+            <p>2</p>
+          </NeonComponent>
+          <NeonComponent>
+            <p>3</p>
+          </NeonComponent>
+          <NeonComponent>
+            <p>4</p>
+          </NeonComponent>
+          <NeonComponent>
+            <p>5</p>
+          </NeonComponent>
+          <NeonComponent>
+            <p>6</p>
+          </NeonComponent>
+          <NeonComponent>
+            <p>7</p>
+          </NeonComponent>
+        </FlexBox>
+      </Container>
+    </>
   );
 }
 
@@ -42,3 +64,14 @@ box-shadow: 0 0 .2rem #fff,
           0 0 2.8rem #bc13fe,
           inset 0 0 1.3rem #bc13fe;  
           */
+
+/**
+           * const FlexBox = styled.div`
+  display: flex;
+  width: 1280px;
+  margin: 0 auto;
+  background-color: #000;
+  gap: 100px;
+  justify-content: center;
+`;
+           */

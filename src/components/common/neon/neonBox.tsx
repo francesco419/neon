@@ -11,8 +11,7 @@ export const NeonBoxStyle = styled.div<NeonCompProps>`
   ${(props) => props.styles}
   border: 3px solid #f0f0f070;
   border-radius: 10px;
-  padding: 20px;
-  margin: 100px 0;
+  padding: 10px;
   transition: border 0.5s, box-shadow 0.5s, opacity 0.5s;
   color: #fff;
   opacity: 0.5;

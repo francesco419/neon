@@ -9,12 +9,17 @@ export type SizeType = {
 
 type NeonComponentProps = {
   children: ReactNode;
-  neonSize: SizeType;
+  neonSize?: SizeType;
+  color?: string;
 };
 
 export default function NeonComponent({
   children,
-  neonSize
+  neonSize = {
+    width: 'auto',
+    height: 'auto'
+  },
+  color = neonColor.yellow
 }: NeonComponentProps) {
   const [onceHover, setOnceHover] = useState<boolean>(false);
 
@@ -27,7 +32,7 @@ export default function NeonComponent({
       <NeonBoxStyle
         onMouseEnter={hoverHandler}
         state={onceHover}
-        color={neonColor.yellow}
+        color={color}
         styles={neonSize}
       >
         {children}
