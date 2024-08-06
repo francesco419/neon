@@ -4,50 +4,69 @@ import NeonComponent from '../../common/neon/neonComponent.tsx';
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
+  padding: 20px 0;
   background-color: #000;
+  box-sizing: border-box;
 `;
 
-const FlexBox = styled.div`
+const GridBox = styled.div`
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
   width: 1280px;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
   background-color: #000;
+  gap: 10px;
+`;
 
-  &:nth-child(1) {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
-  }
+const FlexBox = styled.div`
+  display: flex;
+  width: 1280px;
+  margin: 0 auto;
+  background-color: #000;
+  gap: 100px;
+  justify-content: center;
+`;
+
+const GridInnerBox = styled.div`
+  grid-column-start: 1;
+  grid-column-end: 3;
 `;
 
 export default function SelectPage() {
   return (
     <>
       <Container>
-        <FlexBox>
-          <NeonComponent>
-            <p>1</p>
-          </NeonComponent>
-          <NeonComponent>
+        <GridBox>
+          <GridInnerBox>
+            <NeonComponent
+              neonSize={{ width: 'auto', height: '200px' }}
+              color='blue1'
+            >
+              <p>1</p>
+            </NeonComponent>
+          </GridInnerBox>
+          <NeonComponent color='blue2'>
             <p>2</p>
           </NeonComponent>
-          <NeonComponent>
-            <p>3</p>
+          <NeonComponent color='blue3'>
+            <p>2</p>
           </NeonComponent>
-          <NeonComponent>
-            <p>4</p>
+          <NeonComponent color='green'>
+            <p>2</p>
           </NeonComponent>
-          <NeonComponent>
-            <p>5</p>
+          <NeonComponent color='orange'>
+            <p>2</p>
           </NeonComponent>
-          <NeonComponent>
-            <p>6</p>
+          <NeonComponent color='pink'>
+            <p>2</p>
           </NeonComponent>
-          <NeonComponent>
-            <p>7</p>
+          <NeonComponent color='yellow'>
+            <p>2</p>
           </NeonComponent>
-        </FlexBox>
+        </GridBox>
       </Container>
     </>
   );

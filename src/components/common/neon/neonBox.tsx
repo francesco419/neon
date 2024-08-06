@@ -2,36 +2,38 @@ import styled, { css } from 'styled-components';
 import { SizeType } from './neonComponent';
 
 type NeonCompProps = {
-  state: boolean;
-  color: string;
-  styles: SizeType;
+  $isState: boolean;
+  $color: string;
+  $styles: SizeType;
 };
 
 export const NeonBoxStyle = styled.div<NeonCompProps>`
-  ${(props) => props.styles}
+$thisColor : ${(props) => props.$color}
+  ${(props) => props.$styles}
   border: 3px solid #f0f0f070;
   border-radius: 10px;
   padding: 10px;
-  transition: border 0.5s, box-shadow 0.5s, opacity 0.5s;
+  transition: border 0.5s ease-out, box-shadow 0.5s ease-out, opacity 0.5s ease-out;
   color: #fff;
   opacity: 0.5;
   box-sizing: border-box;
 
-  ${({ state, color }) =>
-    state &&
+  ${({ $isState, $color }) =>
+    $isState &&
     css`
-      border: 3px solid ${color};
-      box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem ${color},
-        0 0 0.5rem ${color}, 0 0 0.5rem ${color}, inset 0 0 0.5rem ${color};
+      border: 3px solid ${$color};
+      box-shadow: 0 0 0.1rem ${$color}, 0 0 0.1rem ${$color}, 0 0 1rem ${$color},
+        0 0 0.3rem ${$color}, 0 0 0.3rem ${$color}, inset 0 0 0.3rem ${$color};
       opacity: 0.3;
     `}
 
   &:hover {
-    border: 3px solid ${(props) => props.color};
-    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff,
-      0 0 2rem ${(props) => props.color}, 0 0 0.8rem ${(props) => props.color},
-      0 0 2.8rem ${(props) => props.color},
-      inset 0 0 1.3rem ${(props) => props.color};
+    border: 3px solid $thisColor;
+    box-shadow: 0 0 0.1rem $thisColor,
+      0 0 0.1rem $thisColor, 0 0 1rem $thisColor,
+      0 0 0.4rem $thisColor,
+      0 0 1.4rem $thisColor,
+      inset 0 0 0.8rem $thisColor;
     opacity: 1;
   }
 `;

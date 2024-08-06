@@ -19,7 +19,7 @@ export default function NeonComponent({
     width: 'auto',
     height: 'auto'
   },
-  color = neonColor.yellow
+  color = 'yellow'
 }: NeonComponentProps) {
   const [onceHover, setOnceHover] = useState<boolean>(false);
 
@@ -27,13 +27,25 @@ export default function NeonComponent({
     setOnceHover(true);
   };
 
+  const isThemeExist = (): string => {
+    let themeColor: string = '#ffe204';
+
+    neonColor.forEach((a) => {
+      if (a.name === color) {
+        themeColor = a.color;
+      }
+    });
+
+    return themeColor;
+  };
+
   return (
     <>
       <NeonBoxStyle
         onMouseEnter={hoverHandler}
-        state={onceHover}
-        color={color}
-        styles={neonSize}
+        $isState={onceHover}
+        $color={isThemeExist()}
+        $styles={neonSize}
       >
         {children}
       </NeonBoxStyle>
