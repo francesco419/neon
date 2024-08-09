@@ -48,24 +48,6 @@ export default function SelectPage() {
               <p>1</p>
             </NeonComponent>
           </GridInnerBox>
-          <NeonComponent color='blue2'>
-            <p>2</p>
-          </NeonComponent>
-          <NeonComponent color='blue3'>
-            <p>2</p>
-          </NeonComponent>
-          <NeonComponent color='green'>
-            <p>2</p>
-          </NeonComponent>
-          <NeonComponent color='orange'>
-            <p>2</p>
-          </NeonComponent>
-          <NeonComponent color='pink'>
-            <p>2</p>
-          </NeonComponent>
-          <NeonComponent color='yellow'>
-            <p>2</p>
-          </NeonComponent>
         </GridBox>
       </Container>
     </>
